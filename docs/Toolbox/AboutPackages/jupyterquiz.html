@@ -105,7 +105,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../README.html">
-                    Welcome to the iNUX Learning Platform
+                    Welcome to iNUX
                 </a>
             </li>
         </ul>
@@ -194,7 +194,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/iNUX-TUD/Teaching_JupyterBook/master?urlpath=tree/docs/docs/Toolbox/AboutPackages/jupyterquiz.ipynb"
+        <a href="https://mybinder.org/v2/gh/iNUX-TUD/Teaching_JupyterBook/master?urlpath=tree/docs/Toolbox/AboutPackages/jupyterquiz.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -208,6 +208,24 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
 
       </li>
       
@@ -511,7 +529,7 @@ questions=json.load(file)</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "iNUX-TUD/Teaching_JupyterBook",
             ref: "master",
         },
         codeMirrorConfig: {
