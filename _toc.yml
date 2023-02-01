@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: docs/README
+parts:
+- caption: Darcy's Law
+  chapters:
+  - file: docs/Lectures/Darcy/00_Index.ipynb
+  - file: docs/Lectures/Darcy/01_Theory.ipynb
+  - file: docs/Lectures/Darcy/02_Application.ipynb
+  - file: docs/Lectures/Darcy/03_Questions.ipynb
