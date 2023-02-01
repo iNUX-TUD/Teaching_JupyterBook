@@ -42,10 +42,11 @@ language = "english"
 # Import language
 
 with open("../DICTS/german_english.json", 'r') as f:
-    language = json.load(f)
-if language="english":
-    ylabel = language["Druckpotential"] + " (m)"
-elif language="german":
+    lang_dict = json.load(f)
+    
+if language=="english":
+    ylabel = lang_dict["Druckpotential"] + " (m)"
+elif language=="german":
     ylabel = "Druckpotential" + " (m)"
 else:
     raise Exception(f"{language} is currently not a supported language!")

@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: 
+title:
 author: Leonard Grabow, Thomas Reimann
 logo: together.png
 copyright: "2023"
@@ -20,10 +20,13 @@ latex:
 #bibtex_bibfiles:
 #  - references.bib
 
+launch_buttons:
+  thebe: true
+
 # Information about where the book exists on the web
 repository:
   url: https://github.com/iNUX-TUD/Teaching_JupyterBook  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
+  #path_to_book:  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book

@@ -109,7 +109,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../README.html">
-                    Welcome to the iNUX Learning Platform
+                    Welcome to iNUX
                 </a>
             </li>
         </ul>
@@ -198,7 +198,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/iNUX-TUD/Teaching_JupyterBook/master?urlpath=tree/docs/docs/Lectures/Darcy/01_Theory.ipynb"
+        <a href="https://mybinder.org/v2/gh/iNUX-TUD/Teaching_JupyterBook/master?urlpath=tree/docs/Lectures/Darcy/01_Theory.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -212,6 +212,24 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
 
       </li>
       
@@ -350,7 +368,7 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="statement-of-darcy-s-law">
 <h1>Statement of Darcy’s Law<a class="headerlink" href="#statement-of-darcy-s-law" title="Permalink to this headline">#</a></h1>
 <p>By the mid-19th Century Henry Darcy proposed a theory that relates hydraulic head with the flux of water through a porous medium. This is known as Darcy’s Law, here for 1D:</p>
-<p><span class="math notranslate nohighlight">\(q = -\frac{h_2 - h_1}{x_2 - x1} k = -\frac{\Delta h}{\Delta x} k\)</span></p>
+<p><span class="math notranslate nohighlight">\(q = -\frac{h_2 - h_1}{x_2 - x_1} k = -\frac{\Delta h}{\Delta x} k\)</span></p>
 <p>Darcy’s Law constitutes one of the most important laws to describe groundwater flow. In this formula <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> describe the position of the two applied hydraulic heads <span class="math notranslate nohighlight">\(h_1\)</span> and <span class="math notranslate nohighlight">\(h_2\)</span>, respectively. <span class="math notranslate nohighlight">\(q\)</span> is the resulting flux through the medium. <span class="math notranslate nohighlight">\(k\)</span> is the so-called hydraulic conductivity. In the next section you will learn more about the meaning and application of Darcy’s Law and its constituents.</p>
 </section>
 
@@ -358,7 +376,7 @@ title="Print to PDF"
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "iNUX-TUD/Teaching_JupyterBook",
             ref: "master",
         },
         codeMirrorConfig: {
