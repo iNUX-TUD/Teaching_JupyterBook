@@ -11,4 +11,4 @@ The Learning Platform is part of the iNUX project, funded by the ...
 ## Contact
 If you encounter questions, problems or you have general suggestions please contact us:
 
-[Leonard Grabow](mailto:leonard.grabow@mailbox.tu-dresden.de),[Thomas Reimann](mailto:Thomas.Reimann@tu-dresden.de)
+[Leonard Grabow](mailto:leonard.grabow@mailbox.tu-dresden.de) [Thomas Reimann](mailto:Thomas.Reimann@tu-dresden.de)

@@ -22,6 +22,7 @@ latex:
 
 launch_buttons:
   thebe: true
+  jupyterhub_url: "http://localhost:8000"
 
 # Information about where the book exists on the web
 repository:
