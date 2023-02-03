@@ -26,6 +26,7 @@ import json
 from ipywidgets import *
 from IPython.display import display,clear_output
 import urllib.request
+import flopy
 
 
 # In[10]:
