@@ -14,7 +14,7 @@ get_ipython().run_cell_magic('HTML', '', '<iframe width="560" height="315" src="
 
 # Now it is your turn to do the same experiment! Play around with the parameters to understand their role in Darcy's law. Also consider that you can change the composition of the porous medium. In the next section you will be asked questions to test your knowledge.
 
-# In[1]:
+# In[9]:
 
 
 # Import necessary packages
@@ -25,11 +25,10 @@ import numpy as np
 import json
 from ipywidgets import *
 from IPython.display import display,clear_output
-import dropbox
-import io
+import urllib.request
 
 
-# In[2]:
+# In[10]:
 
 
 # Define the language in the plot
@@ -38,21 +37,13 @@ import io
 language = "english"
 
 
-# In[ ]:
+# In[11]:
 
 
-tk = "sl.BYHkSsPT0Ay_cInpnSQ4UCTswM7nqvYP9q40WcWo3ICOC4etigNDIcq6kG_bdTEj8q6ggmUgz8xbwC8al36UYLs5hXKlWxJ06rmLWSLL2Al21mzfme51cGb9P2cw3R7z-YvJieo3"
-DBX = dropbox.Dropbox(tk)
-_, res = DBX.files_download("/test.txt")
+# Import language
+with urllib.request.urlopen("https://www.dropbox.com/s/citzs2zds2bihlh/test.txt?dl=1") as url:
+    lang_dict = json.load(url)
 
-with io.BytesIO(res.content) as stream:
-    lang_dict = json.load(stream)
-
-
-# In[5]:
-
-
-# Import language    
 if language=="english":
     ylabel = lang_dict["Druckpotential"] + " (m)"
 elif language=="german":

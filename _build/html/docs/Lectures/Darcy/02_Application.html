@@ -439,8 +439,7 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span><span class="n">clear_output</span>
-<span class="kn">import</span> <span class="nn">dropbox</span>
-<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
 </pre></div>
 </div>
 </div>
@@ -457,19 +456,10 @@ title="Print to PDF"
 </div>
 <div class="cell tag_thebe-init docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tk</span> <span class="o">=</span> <span class="s2">&quot;sl.BYHkSsPT0Ay_cInpnSQ4UCTswM7nqvYP9q40WcWo3ICOC4etigNDIcq6kG_bdTEj8q6ggmUgz8xbwC8al36UYLs5hXKlWxJ06rmLWSLL2Al21mzfme51cGb9P2cw3R7z-YvJieo3&quot;</span>
-<span class="n">DBX</span> <span class="o">=</span> <span class="n">dropbox</span><span class="o">.</span><span class="n">Dropbox</span><span class="p">(</span><span class="n">tk</span><span class="p">)</span>
-<span class="n">_</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="n">DBX</span><span class="o">.</span><span class="n">files_download</span><span class="p">(</span><span class="s2">&quot;/test.txt&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import language</span>
+<span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;https://www.dropbox.com/s/citzs2zds2bihlh/test.txt?dl=1&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">url</span><span class="p">:</span>
+    <span class="n">lang_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
-<span class="k">with</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
-    <span class="n">lang_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_thebe-init docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import language    </span>
 <span class="k">if</span> <span class="n">language</span><span class="o">==</span><span class="s2">&quot;english&quot;</span><span class="p">:</span>
     <span class="n">ylabel</span> <span class="o">=</span> <span class="n">lang_dict</span><span class="p">[</span><span class="s2">&quot;Druckpotential&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; (m)&quot;</span>
 <span class="k">elif</span> <span class="n">language</span><span class="o">==</span><span class="s2">&quot;german&quot;</span><span class="p">:</span>
