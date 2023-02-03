@@ -4,7 +4,7 @@
 # # Application of Darcy's Law
 # 
 # ## 1. Application to a column of porous media
-# Watch the video about how Darcy's Law can describe the flow in porouse media.
+# Watch the video about how Darcy's Law can describe the flow in porous media.
 
 # In[1]:
 
@@ -14,7 +14,7 @@ get_ipython().run_cell_magic('HTML', '', '<iframe width="560" height="315" src="
 
 # Now it is your turn to do the same experiment! Play around with the parameters to understand their role in Darcy's law. Also consider that you can change the composition of the porous medium. In the next section you will be asked questions to test your knowledge.
 
-# In[8]:
+# In[1]:
 
 
 # Import necessary packages
@@ -25,9 +25,11 @@ import numpy as np
 import json
 from ipywidgets import *
 from IPython.display import display,clear_output
+import dropbox
+import io
 
 
-# In[ ]:
+# In[2]:
 
 
 # Define the language in the plot
@@ -39,11 +41,18 @@ language = "english"
 # In[ ]:
 
 
-# Import language
+tk = "sl.BYHkSsPT0Ay_cInpnSQ4UCTswM7nqvYP9q40WcWo3ICOC4etigNDIcq6kG_bdTEj8q6ggmUgz8xbwC8al36UYLs5hXKlWxJ06rmLWSLL2Al21mzfme51cGb9P2cw3R7z-YvJieo3"
+DBX = dropbox.Dropbox(tk)
+_, res = DBX.files_download("/test.txt")
 
-with open("../DICTS/german_english.json", 'r') as f:
-    lang_dict = json.load(f)
-    
+with io.BytesIO(res.content) as stream:
+    lang_dict = json.load(stream)
+
+
+# In[5]:
+
+
+# Import language    
 if language=="english":
     ylabel = lang_dict["Druckpotential"] + " (m)"
 elif language=="german":
@@ -52,7 +61,7 @@ else:
     raise Exception(f"{language} is currently not a supported language!")
 
 
-# In[9]:
+# In[6]:
 
 
 # Define variables needed
@@ -73,7 +82,7 @@ material_dict= {
     }
 
 
-# In[14]:
+# In[7]:
 
 
 # Define functions needed
@@ -187,7 +196,7 @@ def plot_darcy_column(h1, h2, material):
     
 
 
-# In[15]:
+# In[8]:
 
 
 # Run interactive plot
@@ -196,4 +205,10 @@ interact(plot_darcy_column,
          h1 = widgets.BoundedFloatText(value=11, min=5, max=15, step=1, description='H1', disabled=False),
          h2 = widgets.BoundedFloatText(value=0, min=0, max=15, step=1, description='H2:', disabled=False),
          material = widgets.Dropdown(options=material_dict.keys(),value="Sand", description="Material"))
+
+
+# In[ ]:
+
+
+
 
