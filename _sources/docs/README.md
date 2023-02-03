@@ -3,7 +3,7 @@
 Welcome to the official Learning Platform of the iNUX project.
 
 ## About this Learning Platform
-This platform offers living lectures about topics in groundwater. Learn more about any topic you like with helpful explanations, enriched animations and self-study exercises. No matter where you are or whether you are student or professional, just start right away!
+This platform offers living lectures in groundwater. Learn more about any topic you like with helpful explanations, enriched animations and self-study exercises. No matter where you are or whether you are student or professional, just get started right away!
 
 ## About iNUX
 The Learning Platform is part of the iNUX project, funded by the ...
